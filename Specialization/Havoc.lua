@@ -226,11 +226,16 @@ function DemonHunter:HavocDemonic()
 	--	return HV.FelRush;
 	--end
 
+	-- runeforge[HV.ChaosTheoryBonusId]
+	if buff[HV.ChaosTheory].up and fury >= 40 then
+		return ChaosStrike
+	end
+	
 	-- death_sweep,if=variable.blade_dance;
 	if cooldown[HV.DeathSweep].ready and fury >= bladeDanceCost and bladeDance and buff[HV.Metamorphosis].up then
 		return BladeDance;
 	end
-
+	
 	-- glaive_tempest,if=active_enemies>desired_targets|raid_event.adds.in>10;
 	if talents[HV.GlaiveTempest] and cooldown[HV.GlaiveTempest].ready and fury >= 30 then
 		return HV.GlaiveTempest;
@@ -378,6 +383,11 @@ function DemonHunter:HavocNormal()
 		return HV.FelBarrage;
 	end
 
+	-- runeforge[HV.ChaosTheoryBonusId]
+	if buff[HV.ChaosTheory].up and fury >= 40 then
+		return ChaosStrike
+	end
+	
 	-- death_sweep,if=variable.blade_dance;
 	if cooldown[HV.DeathSweep].ready and fury >= bladeDanceCost and bladeDance and buff[HV.Metamorphosis].up then
 		return BladeDance; --DeathSweep
