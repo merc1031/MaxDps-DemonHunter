@@ -226,9 +226,8 @@ function DemonHunter:HavocDemonic()
 	--	return HV.FelRush;
 	--end
 
-	-- runeforge[HV.ChaosTheoryBonusId]
-	if buff[HV.ChaosTheory].up and fury >= 40 then
-		return ChaosStrike
+	if runeforge[HV.ChaosTheoryBonusId] and buff[HV.ChaosTheory].up and fury >= 40 then
+		return ChaosStrike;
 	end
 	
 	-- death_sweep,if=variable.blade_dance;
@@ -383,9 +382,8 @@ function DemonHunter:HavocNormal()
 		return HV.FelBarrage;
 	end
 
-	-- runeforge[HV.ChaosTheoryBonusId]
-	if buff[HV.ChaosTheory].up and fury >= 40 then
-		return ChaosStrike
+	if runeforge[HV.ChaosTheoryBonusId] and buff[HV.ChaosTheory].up and fury >= 40 then
+		return ChaosStrike;
 	end
 	
 	-- death_sweep,if=variable.blade_dance;
