@@ -227,6 +227,7 @@ function DemonHunter:HavocDemonic()
 	--end
 
 	if runeforge[HV.ChaosTheoryBonusId] and buff[HV.ChaosTheory].up and fury >= 40 then
+		MaxDps:GlowCooldown(HV.ChaosStrike, buff[HV.ChaosTheory].up);
 		return ChaosStrike;
 	end
 	
@@ -383,6 +384,7 @@ function DemonHunter:HavocNormal()
 	end
 
 	if runeforge[HV.ChaosTheoryBonusId] and buff[HV.ChaosTheory].up and fury >= 40 then
+		MaxDps:GlowCooldown(HV.ChaosStrike, buff[HV.ChaosTheory].up);
 		return ChaosStrike;
 	end
 	
